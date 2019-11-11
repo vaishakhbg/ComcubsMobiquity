@@ -10,7 +10,7 @@ public class HashPwd {
 	public static final String salt = "mobiquity-comviva";
 	
 	
-	public static String HashingFunction(String s1) throws NoSuchAlgorithmException {
+	public  String HashingFunction(String s1) throws NoSuchAlgorithmException {
 		MessageDigest md= MessageDigest.getInstance("SHA-256");
 		s1=s1+salt;
 		byte[] hashpwd=md.digest(s1.getBytes(StandardCharsets.UTF_8));

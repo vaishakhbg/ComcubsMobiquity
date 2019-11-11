@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viva.entity.Customer;
-import com.viva.entity.CustomerDto;
+
 import com.viva.service.CustomerService;
 
 @CrossOrigin
@@ -32,13 +32,13 @@ public class CustomerController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/add")
 	public boolean addCustomer(@RequestBody Customer customer) {
-		log.info("Add customer post request is recieved");
+		log.info("Add customer post request is recieved for customer with phone no :"+customer.getPhoneNo());
 		return customerservice.addCustomer(customer);
 	}
 
 	@RequestMapping("/view/{phoneno}")
 	public Optional<Customer> getCustomer(@PathVariable String phoneno) {
-			log.info("view customer request is recieved");
+			log.info("view customer request is recieved for Customer with phone no. :"+phoneno);
 		return customerservice.getCustomer(phoneno);
 	}
 	

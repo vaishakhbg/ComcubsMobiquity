@@ -1,0 +1,37 @@
+2019-11-11 10:14:08 INFO  MobiquityProjectApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-11 10:14:11 INFO  MobiquityProjectApplication:61 - Started MobiquityProjectApplication in 3.611 seconds (JVM running for 4.447)
+2019-11-11 10:14:30 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :9000000000
+2019-11-11 10:14:30 INFO  CustomerService:41 - Customer [customerID=1.573447470784E12, phoneNo=9000000000, firstname=Puru, lastname=shotham, email=shoub@gmail.com, gender=Do not want to disclose, age=34, houseNo=3423, street=drsgr, city=rgsdf, state=Ofu‑Olosega]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:17:39 INFO  AdminController:31 - Admin validation post request
+2019-11-11 10:18:15 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :8000000000
+2019-11-11 10:18:15 INFO  CustomerService:41 - Customer [customerID=1.573447695327E12, phoneNo=8000000000, firstname=sudu, lastname=sdfg, email=shoub@gmail.com, gender=Do not want to disclose, age=34, houseNo=23, street=drsgr, city=rgsdf, state=Ofu‑Olosega]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:20:55 INFO  AdminController:31 - Admin validation post request
+2019-11-11 10:21:29 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :7087469033
+2019-11-11 10:21:29 INFO  CustomerService:41 - Customer [customerID=1.57344788971E12, phoneNo=7087469033, firstname=jas, lastname=singh, email=jaskaran@gmail.com, gender=Male, age=22, houseNo=22, street=pyramid, city=amritsar, state=Punjab]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:21:43 INFO  CustomerController:41 - view customer request is recieved for Customer with phone no. :7087469033
+2019-11-11 10:21:43 INFO  CustomerService:28 - View customer Response sent
+2019-11-11 10:21:50 INFO  CustomerController:47 - view all customer request recieved
+2019-11-11 10:23:07 INFO  AdminController:31 - Admin validation post request
+2019-11-11 10:23:23 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :7000000000
+2019-11-11 10:23:23 INFO  CustomerService:41 - Customer [customerID=1.57344800318E12, phoneNo=7000000000, firstname=Puru, lastname=shotham, email=shoub@gmail.com, gender=Male, age=43, houseNo=43, street=drsgr, city=rgsdf, state=Ofu‑Olosega]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:23:37 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :7000000000
+2019-11-11 10:23:37 INFO  CustomerService:41 - Customer [customerID=1.573448017031E12, phoneNo=7000000000, firstname=Puru, lastname=shotham, email=shoub@gmail.com, gender=Male, age=43, houseNo=43, street=drsgr, city=rgsdf, state=Ofu‑Olosega]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:23:56 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :9115156622
+2019-11-11 10:23:56 INFO  CustomerService:41 - Customer [customerID=1.573448036242E12, phoneNo=9115156622, firstname=JASKARAN, lastname=SINGH, email=jaskaran@gmail.com, gender=Male, age=33, houseNo=22, street=pyramid, city=amritsar, state=Punjab]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:24:21 INFO  AdminController:31 - Admin validation post request
+2019-11-11 10:24:56 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :9000000000
+2019-11-11 10:24:56 INFO  CustomerService:41 - Customer [customerID=1.573448096143E12, phoneNo=9000000000, firstname=Puru, lastname=shotham, email=shoub@gmail.com, gender=Do not want to disclose, age=33, houseNo=12, street=drsgr, city=rgsdf, state=Ofu‑Olosega]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:25:51 INFO  CustomerController:47 - view all customer request recieved
+2019-11-11 10:25:52 INFO  CustomerController:41 - view customer request is recieved for Customer with phone no. :9115156622
+2019-11-11 10:25:52 INFO  CustomerService:28 - View customer Response sent
+2019-11-11 10:25:54 INFO  CustomerController:47 - view all customer request recieved
+2019-11-11 10:26:13 INFO  CustomerController:41 - view customer request is recieved for Customer with phone no. :8888888888
+2019-11-11 10:26:13 INFO  CustomerService:28 - View customer Response sent
+2019-11-11 10:26:33 INFO  CustomerController:35 - Add customer post request is recieved for customer with phone no :7087469033
+2019-11-11 10:26:33 INFO  CustomerService:41 - Customer [customerID=1.573448193824E12, phoneNo=7087469033, firstname=JASKARAN, lastname=SINGH, email=jaskaran@gmail.com, gender=Male, age=21, houseNo=33, street=pyramid, city=amritsar, state=Punjab]>>>>>>>>Customer added sucessfully<<<<<<<<<
+2019-11-11 10:26:43 INFO  CustomerController:41 - view customer request is recieved for Customer with phone no. :7087469033
+2019-11-11 10:26:43 ERROR CustomerService:31 - query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+2019-11-11 10:27:10 INFO  CustomerController:47 - view all customer request recieved
+2019-11-11 10:27:43 INFO  CustomerController:41 - view customer request is recieved for Customer with phone no. :7087469033
+2019-11-11 10:27:43 ERROR CustomerService:31 - query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+2019-11-11 10:28:46 INFO  CustomerController:47 - view all customer request recieved

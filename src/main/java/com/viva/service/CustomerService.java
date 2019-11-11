@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,8 +21,6 @@ public class CustomerService {
 	@Autowired
 	private ICustomerDao icustomerdao;
 	
-	@Autowired
-	private EntityManager em;
 
 	public Optional<Customer> getCustomer(String phoneno) {
 		try {

@@ -19,7 +19,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
 import com.viva.dao.IAdminDao;
 import com.viva.dao.ICustomerDao;
 import com.viva.entity.Admin;
