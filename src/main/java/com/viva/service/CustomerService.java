@@ -1,19 +1,22 @@
 package com.viva.service;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
-
-
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.viva.dao.CustomerDaoImpl;
 import com.viva.dao.ICustomerDao;
 
 import com.viva.entity.Customer;
+import com.viva.exceptions.CustomerNotFoundException;
+import com.viva.exceptions.EmptyDatabaseException;
+import com.viva.exceptions.PhoneNoExistsException;
 
 @Service
 public class CustomerService {
@@ -21,42 +24,46 @@ public class CustomerService {
 	@Autowired
 	private ICustomerDao icustomerdao;
 	
+	@Autowired
+	private CustomerDaoImpl customerdaoimpl;
+	
 
-	public Optional<Customer> getCustomer(String phoneno) {
-		try {
-			Optional<Customer> customer = icustomerdao.findByPhoneNo(phoneno);
-			log.info("View customer Response sent");
+	public Customer getCustomer(String phoneno) throws CustomerNotFoundException {
+			Customer customer = icustomerdao.findByPhoneNo(phoneno);
+			if (customer==null) {
+				throw new CustomerNotFoundException("No customer found with phone number "+phoneno);
+			}
+			log.info("View customer Response sent for customer with phone no :"+phoneno);
 			return customer;
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			return null;
-		}
-	}
+		} 
+	
 
-	public boolean addCustomer(Customer customer) {
-		try {
-            Timestamp timestamp= new Timestamp(System.currentTimeMillis());
-			customer.setCustomerID(timestamp.getTime());
-			icustomerdao.save(customer);
-			log.info(customer + ">>>>>>>>Customer added sucessfully<<<<<<<<<");
-			return true;
-		} catch (Exception e) {
-			log.error(customer + ">>>>>>>Customer add request failed<<<<<<<<<<<<");
-			log.error(e.getMessage());
-			return false;
+	public char getStatus(String phoneno) {
+		if(customerdaoimpl.findByPhoneNoAndStatus(phoneno) != null)
+			return 'Y';
+		else
+			return 'N';
+	}
+	
+
+	public boolean addCustomer(Customer customer) throws PhoneNoExistsException {
+		if(getStatus(customer.getPhoneNo())=='Y') {
+			throw new PhoneNoExistsException("Active customer with the same phone number exists");
 		}
+        Timestamp timestamp= new Timestamp(System.currentTimeMillis());
+		customer.setCustomerID(timestamp.getTime());
+		icustomerdao.save(customer);
+		log.info(customer + ">>>>>>>>Customer added sucessfully<<<<<<<<<");
+		return true;
 	}
 
 	
 
-	public List<Customer> getAllCustomer() {
-		try {
-			return icustomerdao.findAll();
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			return null;
+	public List<Customer> getAllCustomer() throws EmptyDatabaseException {
+		if(icustomerdao.findAll().isEmpty()) {
+			throw new EmptyDatabaseException("No users in database");
 		}
-
+		return icustomerdao.findAll();
 	}
 
 	public boolean deleteCustomer(String phoneno) {
@@ -71,5 +78,7 @@ public class CustomerService {
 			return false;
 		}
 	}
+
+
 
 }

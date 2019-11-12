@@ -1,10 +1,14 @@
 package com.viva.entity;
 
+
+
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.google.gson.Gson;
 
 @Entity
 public class Customer {
@@ -16,12 +20,15 @@ public class Customer {
 	
 	@NotNull
 	private String phoneNo;
+	
 	@NotNull
 	private String firstname;
 	@NotNull
 	private String lastname;
 	@NotNull
 	private String email;
+	@NotNull
+	private char Status;
 	@NotNull
 	private String gender;
 	@NotNull
@@ -39,6 +46,9 @@ public class Customer {
 	@NotNull
 	@Size(max = 100)
 	private String state;
+	@NotNull
+	@Size(max=20)
+	private String KycID ;
 	
 	@NotNull
 	@Size(max = 6)
@@ -114,27 +124,25 @@ public class Customer {
 		this.age = age;
 	}
 
-
-
-	public Customer(double customerID, @NotNull String phoneNo, @NotNull String firstname, @NotNull String lastname,
-			@NotNull String email, @NotNull String gender, @NotNull int age, @NotNull @Size(max = 100) String houseNo,
-			@NotNull @Size(max = 100) String street, @NotNull @Size(max = 100) String city,
-			@NotNull @Size(max = 100) String state, @NotNull @Size(max = 6) String pincode) {
-		super();
-		this.customerID = customerID;
-		this.phoneNo = phoneNo;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.gender = gender;
-		this.age = age;
-		this.houseNo = houseNo;
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.pincode = pincode;
+	public char isStatus() {
+		return Status;
 	}
 
+	public void setStatus(char status) {
+		Status = status;
+	}
+
+
+
+	public String getKycID() {
+		return KycID;
+	}
+
+	public void setKycID(String kycID) {
+		KycID = kycID;
+	}
+
+	
 	public String getHouseNo() {
 		return houseNo;
 	}
@@ -155,6 +163,28 @@ public class Customer {
 		return city;
 	}
 
+	public Customer(double customerID, @NotNull String phoneNo, @NotNull String firstname, @NotNull String lastname,
+			@NotNull String email, @NotNull char status, @NotNull String gender, @NotNull int age,
+			@NotNull @Size(max = 100) String houseNo, @NotNull @Size(max = 100) String street,
+			@NotNull @Size(max = 100) String city, @NotNull @Size(max = 100) String state,
+			@NotNull @Size(max = 20) String kycID, @NotNull @Size(max = 6) String pincode) {
+		super();
+		this.customerID = customerID;
+		this.phoneNo = phoneNo;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		Status = status;
+		this.gender = gender;
+		this.age = age;
+		this.houseNo = houseNo;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		KycID = kycID;
+		this.pincode = pincode;
+	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
@@ -168,17 +198,13 @@ public class Customer {
 	}
 
 
-
-
-
-
-
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", phoneNo=" + phoneNo + ", firstname=" + firstname
-				+ ", lastname=" + lastname + ", email=" + email + ", gender=" + gender + ", age=" + age + ", houseNo="
-				+ houseNo + ", street=" + street + ", city=" + city + ", state=" + state + "]";
+		Gson gson = new Gson();
+		String json = gson.toJson(this);
+		return json;
 	}
+	
 
 	
 	
