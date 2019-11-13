@@ -29,7 +29,7 @@ public class CustomerService {
 	
 
 	public Customer getCustomer(String phoneno) throws CustomerNotFoundException {
-			Customer customer = icustomerdao.findByPhoneNo(phoneno);
+			Customer customer = customerdaoimpl.findByPhoneNoAndStatus(phoneno);
 			if (customer==null) {
 				throw new CustomerNotFoundException("No customer found with phone number "+phoneno);
 			}

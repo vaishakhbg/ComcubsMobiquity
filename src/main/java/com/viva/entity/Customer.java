@@ -48,7 +48,7 @@ public class Customer {
 	private String state;
 	@NotNull
 	@Size(max=20)
-	private String KycID ;
+	private String kycID ;
 	
 	@NotNull
 	@Size(max = 6)
@@ -124,22 +124,22 @@ public class Customer {
 		this.age = age;
 	}
 
-	public char isStatus() {
+	public char getStatus() {
 		return Status;
 	}
 
 	public void setStatus(char status) {
-		Status = status;
+		this.Status = status;
 	}
 
 
 
 	public String getKycID() {
-		return KycID;
+		return kycID;
 	}
 
 	public void setKycID(String kycID) {
-		KycID = kycID;
+		this.kycID = kycID;
 	}
 
 	
@@ -164,7 +164,7 @@ public class Customer {
 	}
 
 	public Customer(double customerID, @NotNull String phoneNo, @NotNull String firstname, @NotNull String lastname,
-			@NotNull String email, @NotNull char status, @NotNull String gender, @NotNull int age,
+			@NotNull String email, @NotNull char Status, @NotNull String gender, @NotNull int age,
 			@NotNull @Size(max = 100) String houseNo, @NotNull @Size(max = 100) String street,
 			@NotNull @Size(max = 100) String city, @NotNull @Size(max = 100) String state,
 			@NotNull @Size(max = 20) String kycID, @NotNull @Size(max = 6) String pincode) {
@@ -174,14 +174,14 @@ public class Customer {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
-		Status = status;
+		this.Status = Status;
 		this.gender = gender;
 		this.age = age;
 		this.houseNo = houseNo;
 		this.street = street;
 		this.city = city;
 		this.state = state;
-		KycID = kycID;
+		this.kycID = kycID;
 		this.pincode = pincode;
 	}
 
