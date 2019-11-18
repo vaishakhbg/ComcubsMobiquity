@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.viva.entity.Admin;
 import com.viva.exceptions.IncorrectCredentialsException;
 import com.viva.service.AdminService;
-import com.viva.util.ApiError;
+
 import com.viva.util.ApiSuccess;
 
 @CrossOrigin

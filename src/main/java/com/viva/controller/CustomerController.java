@@ -48,7 +48,6 @@ public class CustomerController {
 	@RequestMapping(method = RequestMethod.POST, value = "/add")
 	public ResponseEntity<Object> addCustomer(@RequestBody Customer customer) throws PhoneNoExistsException {
 		log.info("Add customer post request is recieved for customerv : "+customer);
-		customer.setStatus('Y');
 		if(customerservice.addCustomer(customer)==true) {
 			ApiSuccess apiSuccess = new ApiSuccess(HttpStatus.CREATED);
 			apiSuccess.setMessage("Customer creation successful");
@@ -77,11 +76,6 @@ public class CustomerController {
 		return ResponseEntity.ok(customerservice.getAllCustomer());
 		}
 	
-	@RequestMapping("/delete/{phoneno}")
-		public boolean deleteCustomer(@PathVariable String phoneno) {
-			log.info("delete request recieved for customer with phone no :"+ phoneno);
-			return customerservice.deleteCustomer(phoneno);
-		}
 	}
 
 

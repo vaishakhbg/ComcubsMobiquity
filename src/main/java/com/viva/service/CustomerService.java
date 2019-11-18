@@ -1,9 +1,9 @@
 package com.viva.service;
 
-import java.math.BigInteger;
+
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Optional;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -64,19 +64,6 @@ public class CustomerService {
 			throw new EmptyDatabaseException("No users in database");
 		}
 		return icustomerdao.findAll();
-	}
-
-	public boolean deleteCustomer(String phoneno) {
-
-		try {
-			
-			icustomerdao.deleteByPhoneNo(phoneno);
-			return true;
-		} catch (Exception e) {
-			log.error(">>>>>>>Customer delete request failed<<<<<<<<<<<<");
-			log.error(e.getMessage());
-			return false;
-		}
 	}
 
 

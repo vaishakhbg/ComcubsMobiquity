@@ -28,7 +28,7 @@ public class Customer {
 	@NotNull
 	private String email;
 	@NotNull
-	private char Status;
+	private char status;
 	@NotNull
 	private String gender;
 	@NotNull
@@ -125,11 +125,11 @@ public class Customer {
 	}
 
 	public char getStatus() {
-		return Status;
+		return status;
 	}
 
-	public void setStatus(char status) {
-		this.Status = status;
+	public void setStatus(char Status) {
+		this.status = Status;
 	}
 
 
@@ -174,7 +174,7 @@ public class Customer {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
-		this.Status = Status;
+		this.status = Status;
 		this.gender = gender;
 		this.age = age;
 		this.houseNo = houseNo;

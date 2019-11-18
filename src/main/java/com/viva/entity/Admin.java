@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 
 import javax.persistence.Id;
 
+import com.google.gson.Gson;
+
 @Entity
 public class Admin {
 
@@ -36,6 +38,12 @@ public class Admin {
 	@Override
 	public String toString() {
 		return "Admin [  username=" + username + ", password=" + password + "]";
+	}
+	
+	public String toJson() {
+		Gson gson = new Gson();
+		String json = gson.toJson(this);
+		return json;
 	}
 
 }
